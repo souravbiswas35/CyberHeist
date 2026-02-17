@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cyberheist.UpgradeController"
+      alignment="CENTER" spacing="20" styleClass="root">
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30" />
+    </padding>
+
+    <Label text="UPGRADE CENTER" styleClass="title-label" />
+
+    <HBox spacing="20" alignment="CENTER">
+        <Label fx:id="coinsLabel" text="Coins: 500"
+               styleClass="coins-label" />
+        <Label fx:id="diamondsLabel" text="Diamonds: 10"
+               styleClass="diamonds-label" />
+    </HBox>
+
+    <HBox spacing="30" alignment="TOP_CENTER">
+        <!-- Attack Upgrades -->
+        <VBox spacing="15" alignment="TOP_CENTER"
+              styleClass="container">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <Label text="ATTACK UPGRADES" styleClass="subtitle-label" />
+            <ScrollPane fitToWidth="true" maxHeight="500">
+                <VBox fx:id="attackUpgradesBox" spacing="15" />
+            </ScrollPane>
+        </VBox>
+
+        <!-- Defense Upgrades -->
+        <VBox spacing="15" alignment="TOP_CENTER"
+              styleClass="container">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+            <Label text="DEFENSE UPGRADES" styleClass="subtitle-label" />
+            <ScrollPane fitToWidth="true" maxHeight="500">
+                <VBox fx:id="defenseUpgradesBox" spacing="15" />
+            </ScrollPane>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="backButton" text="← BACK" onAction="#handleBack" />
+        <Button fx:id="mainMenuButton" text="MAIN MENU"
+                onAction="#handleMainMenu" styleClass="primary-button" />
+    </HBox>
+
+    <Label text="Upgrade your attack and defense capabilities using coins and diamonds"
+           styleClass="info-label" />
+</VBox>

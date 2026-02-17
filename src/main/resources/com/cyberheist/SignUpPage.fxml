@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="400.0" prefWidth="400.0" spacing="20" styleClass="root" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberheist.SignUpController">
+    <padding>
+        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+    </padding>
+    <Label styleClass="title-label" text="JOIN THE HEIST">
+        <font>
+            <Font name="Arial Bold" size="24.0" />
+        </font>
+    </Label>
+    <Label styleClass="subtitle-label" text="Create Your Hacker Profile" />
+
+    <VBox alignment="CENTER" maxWidth="350.0" spacing="15.0" styleClass="container">
+        <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        </padding>
+        <Label styleClass="info-label" text="REGISTRATION" />
+
+        <VBox spacing="5.0">
+            <Label text="Full Name:" />
+            <TextField fx:id="nameField" promptText="Enter your full name" />
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label text="Username:" />
+            <TextField fx:id="usernameField" promptText="Choose a username" />
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label text="Password:" />
+            <PasswordField fx:id="passwordField" promptText="Set your password" />
+        </VBox>
+
+        <VBox spacing="5.0">
+            <Label text="Email:" />
+            <TextField fx:id="emailField" promptText="Enter your email address" />
+        </VBox>
+
+        <HBox alignment="CENTER" spacing="20.0">
+            <Button fx:id="registerButton" onAction="#handleRegister" styleClass="primary-button" text="REGISTER" />
+            <Button onAction="#handleGoBack" text="BACK TO LOGIN" />
+        </HBox>
+    </VBox>
+</VBox>

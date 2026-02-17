@@ -1,0 +1,846 @@
+/* Main Background */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #0a0a0a, #1a1a2e);
+    -fx-font-family: "Courier New", monospace;
+}
+
+/* Title Labels */
+.title-label {
+    -fx-font-size: 36px;
+    -fx-font-weight: bold;
+    -fx-text-fill: linear-gradient(to right, #00ff41, #00d4aa);
+    -fx-effect: dropshadow(gaussian, #00ff41, 6, 0.3, 0, 0);
+}
+
+.subtitle-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #00d4aa;
+    -fx-effect: dropshadow(gaussian, #00d4aa, 5, 0.3, 0, 0);
+}
+
+/* Buttons */
+.button {
+    -fx-background-color: linear-gradient(to bottom, #16213e, #0f1419);
+    -fx-text-fill: #00ff41;
+    -fx-border-color: #00ff41;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, #00ff41, 5, 0.3, 0, 0);
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #00ff41, #00d4aa);
+    -fx-text-fill: #0a0a0a;
+    -fx-effect: dropshadow(gaussian, #00ff41, 15, 0.7, 0, 0);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(to bottom, #00d4aa, #008f5f);
+    -fx-effect: innershadow(gaussian, #000000, 10, 0.5, 0, 0);
+}
+
+/* Primary Action Buttons */
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #ff6b35, #f7931e);
+    -fx-text-fill: #000000;
+    -fx-border-color: #ff6b35;
+    -fx-font-size: 16px;
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ff8c42, #ffb347);
+    -fx-effect: dropshadow(gaussian, #ff6b35, 15, 0.7, 0, 0);
+}
+
+/* Menu Buttons */
+.menu-button {
+    -fx-pref-width: 200px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+}
+
+/* Mini Game Buttons */
+.minigame-button {
+    -fx-pref-width: 300px;
+    -fx-pref-height: 60px;
+    -fx-font-size: 14px;
+    -fx-background-color: linear-gradient(to bottom, #6a0dad, #4b0082);
+    -fx-border-color: #9370db;
+}
+
+.minigame-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #9370db, #8a2be2);
+}
+
+/* Tool Buttons */
+.tool-button {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 45px;
+    -fx-margin: 5px;
+}
+
+.attacking-tool {
+    -fx-background-color: linear-gradient(to bottom, #8b0000, #dc143c);
+    -fx-border-color: #ff4500;
+    -fx-text-fill: #ffffff;
+}
+
+.attacking-tool:hover {
+    -fx-background-color: linear-gradient(to bottom, #dc143c, #ff6347);
+}
+
+.defensive-tool {
+    -fx-background-color: linear-gradient(to bottom, #006400, #228b22);
+    -fx-border-color: #32cd32;
+    -fx-text-fill: #ffffff;
+}
+
+.defensive-tool:hover {
+    -fx-background-color: linear-gradient(to bottom, #228b22, #90ee90);
+}
+
+/* Text Fields */
+.text-field {
+    -fx-background-color: #1a1a2e;
+    -fx-text-fill: #00ff41;
+    -fx-border-color: #00ff41;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-font-size: 14px;
+    -fx-font-family: "Courier New", monospace;
+}
+
+.text-field:focused {
+    -fx-border-color: #00d4aa;
+    -fx-effect: dropshadow(gaussian, #00d4aa, 10, 0.5, 0, 0);
+}
+
+/* Labels */
+.label {
+    -fx-text-fill: #00ff41;
+    -fx-font-family: "Courier New", monospace;
+}
+
+.info-label {
+    -fx-text-fill: #00d4aa;
+    -fx-font-size: 14px;
+}
+
+.coins-label {
+    -fx-text-fill: #ffd700;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #ffd700, 5, 0.3, 0, 0);
+}
+
+.diamonds-label {
+    -fx-text-fill: #00bfff;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, #00bfff, 5, 0.3, 0, 0);
+}
+
+/* Containers */
+.container {
+    -fx-background-color: rgba(22, 33, 62, 0.8);
+    -fx-border-color: #00ff41;
+    -fx-border-width: 1px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 20px;
+}
+
+.game-container {
+    -fx-background-color: rgba(0, 0, 0, 0.9);
+    -fx-border-color: #00ff41;
+    -fx-border-width: 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+}
+
+/* VBox and HBox */
+.vbox, .hbox {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+/* Tic Tac Toe specific */
+.game-button {
+    -fx-pref-width: 80px;
+    -fx-pref-height: 80px;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.player-move {
+    -fx-text-fill: #00ff41;
+    -fx-background-color: rgba(0, 255, 65, 0.2);
+}
+
+.ai-move {
+    -fx-text-fill: #ff4500;
+    -fx-background-color: rgba(255, 69, 0, 0.2);
+}
+
+/* Canvas */
+.canvas {
+    -fx-border-color: #00ff41;
+    -fx-border-width: 2px;
+}
+
+/* Alert Dialog Customization */
+.alert {
+    -fx-background-color: #1a1a2e;
+}
+
+.alert .header-panel {
+    -fx-background-color: #16213e;
+}
+
+.alert .content-panel {
+    -fx-background-color: #1a1a2e;
+}
+
+/* Scrollbars */
+.scroll-bar {
+    -fx-background-color: #1a1a2e;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #00ff41;
+    -fx-background-radius: 10px;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #16213e;
+}
+
+/* Progress indicators */
+.progress-bar {
+    -fx-accent: #00ff41;
+}
+
+/* Animations */
+@keyframes glow {
+    0% { -fx-effect: dropshadow(gaussian, #00ff41, 2, 0.2, 0, 0); }
+    50% { -fx-effect: dropshadow(gaussian, #00ff41, 5, 0.4, 0, 0); }
+    100% { -fx-effect: dropshadow(gaussian, #00ff41, 2, 0.2, 0, 0); }
+}
+
+
+
+
+/* CSS Styles for Upgrade System - Add to your existing styles.css */
+
+.upgrade-container {
+    -fx-background-color: linear-gradient(to bottom, #3a3a3a, #2a2a2a);
+    -fx-border-color: #555555;
+    -fx-border-width: 2px;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 8, 0, 0, 3);
+    -fx-max-width: 350px;
+    -fx-min-width: 300px;
+}
+
+.upgrade-container.attack-upgrade {
+    -fx-border-color: #ff4444;
+}
+
+.upgrade-container.defense-upgrade {
+    -fx-border-color: #4444ff;
+}
+
+.upgrade-name {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+}
+
+.upgrade-level {
+    -fx-font-size: 12px;
+    -fx-text-fill: #ffdd44;
+    -fx-font-weight: bold;
+}
+
+.upgrade-description {
+    -fx-font-size: 11px;
+    -fx-text-fill: #cccccc;
+    -fx-wrap-text: true;
+}
+
+.upgrade-progress {
+    -fx-accent: #00ff88;
+}
+
+.upgrade-progress .bar {
+    -fx-background-color: linear-gradient(to right, #00ff88, #44ff88);
+    -fx-background-radius: 4px;
+}
+
+.upgrade-progress .track {
+    -fx-background-color: #444444;
+    -fx-background-radius: 4px;
+}
+
+.cost-label {
+    -fx-font-size: 10px;
+    -fx-text-fill: #ffaa44;
+    -fx-font-weight: bold;
+}
+
+.max-level-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #00ff00;
+    -fx-font-weight: bold;
+}
+
+.upgrade-button {
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #45a049);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(76,175,80,0.3), 4, 0, 0, 2);
+}
+
+.upgrade-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #45a049, #3d8b40);
+    -fx-effect: dropshadow(gaussian, rgba(76,175,80,0.6), 6, 0, 0, 2);
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.upgrade-button:disabled {
+    -fx-background-color: #666666;
+    -fx-text-fill: #aaaaaa;
+    -fx-cursor: default;
+    -fx-effect: none;
+}
+
+.upgrade-button.attack-button {
+    -fx-background-color: linear-gradient(to bottom, #ff6b6b, #ff5252);
+}
+
+.upgrade-button.attack-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ff5252, #ff3b3b);
+    -fx-effect: dropshadow(gaussian, rgba(255,107,107,0.6), 6, 0, 0, 2);
+}
+
+.upgrade-button.defense-button {
+    -fx-background-color: linear-gradient(to bottom, #6b6bff, #5252ff);
+}
+
+.upgrade-button.defense-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #5252ff, #3b3bff);
+    -fx-effect: dropshadow(gaussian, rgba(107,107,255,0.6), 6, 0, 0, 2);
+}
+
+
+
+/* Currency display */
+.coins-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffdd44;
+    -fx-background-color: rgba(255,221,68,0.1);
+    -fx-padding: 8px 12px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-color: #ffdd44;
+    -fx-border-width: 1px;
+}
+
+.diamonds-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #44ddff;
+    -fx-background-color: rgba(68,221,255,0.1);
+    -fx-padding: 8px 12px;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-border-color: #44ddff;
+    -fx-border-width: 1px;
+}
+
+/* Tool Item Container (similar to upgrade-container) */
+.tool-item-container {
+    -fx-background-color: #2c3e50; /* Background for individual tool */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 0);
+    -fx-spacing: 5px;
+    -fx-padding: 10px;
+}
+
+.attacking-tool-item {
+    -fx-border-color: #e74c3c; /* Reddish border for attacking tools */
+    -fx-border-width: 1px;
+}
+
+.defensive-tool-item {
+    -fx-border-color: #2ecc71; /* Greenish border for defensive tools */
+    -fx-border-width: 1px;
+}
+
+
+/* Tool Name */
+.tool-name {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+}
+
+/* Tool Description */
+.tool-description {
+    -fx-font-size: 12px;
+    -fx-text-fill: #bdc3c7;
+    -fx-padding: 0 0 5px 0;
+}
+
+/* Tool Cost */
+.tool-cost {
+    -fx-font-size: 14px;
+    -fx-text-fill: #f1c40f; /* Gold/Yellow for cost */
+    -fx-font-weight: bold;
+}
+
+/* Tool Action Button (similar to upgrade-button) */
+.tool-action-button {
+    -fx-background-color: #3498db; /* Blue */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 8px 15px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0, 0, 0);
+}
+
+.tool-action-button:hover {
+    -fx-background-color: #2980b9; /* Darker blue on hover */
+}
+
+/* Type-specific action buttons */
+.attacking-action-button {
+    -fx-background-color: #e74c3c; /* Red for attacking action */
+}
+.attacking-action-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+.defensive-action-button {
+    -fx-background-color: #2ecc71; /* Green for defensive action */
+}
+.defensive-action-button:hover {
+    -fx-background-color: #27ae60;
+}
+
+/* Profile Header */
+.profile-header {
+    -fx-background-color: linear-gradient(to bottom, #2c3e50, #34495e);
+    -fx-background-radius: 10;
+    -fx-border-color: #4a5568;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.profile-image {
+    -fx-background-color: #ecf0f1;
+    -fx-background-radius: 60;
+    -fx-border-color: #3498db;
+    -fx-border-width: 3;
+    -fx-border-radius: 60;
+}
+
+.username-label {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+}
+
+.level-label {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f39c12;
+    -fx-background-color: #2c3e50;
+    -fx-background-radius: 15;
+    -fx-padding: 5 10 5 10;
+}
+
+.rank-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e74c3c;
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 10;
+    -fx-padding: 3 8 3 8;
+}
+
+.experience-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #bdc3c7;
+}
+
+.experience-bar {
+    -fx-accent: #3498db;
+    -fx-background-color: #2c3e50;
+}
+
+.experience-bar .bar {
+    -fx-background-color: linear-gradient(to right, #3498db, #2ecc71);
+    -fx-background-radius: 10;
+}
+
+.experience-bar .track {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 10;
+}
+
+.secondary-button {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: #2c3e50;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 12 6 12;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+/* Statistics Section */
+.statistics-section {
+    -fx-background-color: linear-gradient(to bottom, #34495e, #2c3e50);
+    -fx-background-radius: 10;
+    -fx-border-color: #4a5568;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+    -fx-underline: true;
+}
+
+.stat-box {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 8;
+    -fx-border-color: #4a5568;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+    -fx-padding: 15;
+}
+
+.stat-box:hover {
+    -fx-background-color: #2c3e50;
+    -fx-border-color: #3498db;
+}
+
+.stat-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ecf0f1;
+}
+
+.stat-value.win-color {
+    -fx-text-fill: #2ecc71;
+}
+
+.stat-value.loss-color {
+    -fx-text-fill: #e74c3c;
+}
+
+.stat-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #bdc3c7;
+    -fx-font-weight: normal;
+}
+
+/* Game History Section */
+.history-section {
+    -fx-background-color: linear-gradient(to bottom, #34495e, #2c3e50);
+    -fx-background-radius: 10;
+    -fx-border-color: #4a5568;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.game-history-table {
+    -fx-background-color: #1a1a1a;
+    -fx-background-radius: 8;
+    -fx-border-color: #4a5568;
+    -fx-border-width: 1;
+    -fx-border-radius: 8;
+}
+
+.game-history-table .column-header {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.game-history-table .column-header-background {
+    -fx-background-color: #2c3e50;
+}
+
+.game-history-table .table-row-cell {
+    -fx-background-color: #1a1a1a;
+    -fx-text-fill: #ecf0f1;
+}
+
+.game-history-table .table-row-cell:hover {
+    -fx-background-color: #2c3e50;
+}
+
+.game-history-table .table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.game-history-table .table-cell {
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+}
+
+/* Scrollbar Styling */
+.scroll-bar:vertical {
+    -fx-background-color: #2c3e50;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-color: #2c3e50;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* BattleGame specific styles */
+.cyber-bg {
+    -fx-background-color: #000000;
+    -fx-background-image: url("assets/cyberpunk_bg.jpg");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+}
+
+.health-bg {
+    -fx-fill: rgba(20, 20, 30, 0.7);
+    -fx-stroke: #33ccff;
+    -fx-stroke-width: 2;
+    -fx-arc-width: 10;
+    -fx-arc-height: 10;
+}
+
+.player-health {
+    -fx-fill: linear-gradient(to right, #33ccff, #0066cc);
+    -fx-arc-width: 10;
+    -fx-arc-height: 10;
+    -fx-stroke: none;
+}
+
+.opponent-health {
+    -fx-fill: linear-gradient(to right, #ff3366, #cc0033);
+    -fx-arc-width: 10;
+    -fx-arc-height: 10;
+    -fx-stroke: none;
+}
+
+.health-text {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, black, 1, 1, 0, 0);
+}
+
+.health-label {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cccccc;
+    -fx-effect: dropshadow(gaussian, black, 1, 1, 0, 0);
+}
+
+.status-label {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 18px;
+    -fx-text-fill: #33ccff;
+    -fx-effect: dropshadow(gaussian, black, 1, 1, 0, 0);
+}
+
+.treasure-bg {
+    -fx-fill: rgba(20, 20, 30, 0.7);
+    -fx-stroke: #ffcc00;
+    -fx-stroke-width: 2;
+    -fx-arc-width: 10;
+    -fx-arc-height: 10;
+}
+
+.treasure-label {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffcc00;
+}
+
+.xp-label {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-text-fill: #33ccff;
+}
+
+.xp-info-label {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-text-fill: #cccccc;
+}
+
+.attack-button {
+    -fx-background-color: linear-gradient(to bottom, #ff3366, #cc0033);
+    -fx-text-fill: white;
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-color: #ff3366;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 5, 0, 0, 1);
+}
+
+.attack-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ff4d79, #ff0033);
+    -fx-cursor: hand;
+}
+
+.attack-button:pressed {
+    -fx-background-color: #cc0033;
+}
+
+.defense-button {
+    -fx-background-color: linear-gradient(to bottom, #33ccff, #0066cc);
+    -fx-text-fill: white;
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-border-color: #33ccff;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 5, 0, 0, 1);
+}
+
+.defense-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #66d9ff, #0080ff);
+    -fx-cursor: hand;
+}
+
+.defense-button:pressed {
+    -fx-background-color: #0066cc;
+}
+
+.ready-button {
+    -fx-background-color: linear-gradient(to bottom, #00cc66, #009933);
+    -fx-text-fill: white;
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+    -fx-padding: 10 20;
+    -fx-border-color: #00cc66;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.7), 5, 0, 0, 1);
+}
+
+.ready-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #00e673, #00cc44);
+    -fx-cursor: hand;
+}
+
+.ready-button:pressed {
+    -fx-background-color: #009933;
+}
+
+.message-area {
+    -fx-background-color: rgba(20, 20, 30, 0.7);
+    -fx-text-fill: #cccccc;
+    -fx-font-family: "Courier New", monospace;
+    -fx-border-color: #33ccff;
+    -fx-border-width: 1;
+}
+
+.section-title {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+.combo-box {
+    -fx-background-color: rgba(40, 40, 60, 0.7);
+    -fx-text-fill: white;
+    -fx-font-family: "Courier New", monospace;
+    -fx-border-color: #33ccff;
+    -fx-border-width: 1;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: rgba(40, 40, 60, 0.7);
+    -fx-text-fill: white;
+}
+
+.combo-box .list-cell:hover {
+    -fx-background-color: rgba(60, 60, 100, 0.7);
+}
+
+.combo-box .list-view {
+    -fx-background-color: rgba(40, 40, 60, 0.9);
+    -fx-border-color: #33ccff;
+    -fx-border-width: 1;
+}
+
+/* End of BattleGame specific styles */
+
+.timer-title {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #cccccc;
+    -fx-effect: dropshadow(gaussian, black, 1, 1, 0, 0);
+}
+
+.timer-label {
+    -fx-font-family: "Orbitron", "Courier New", monospace;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #000000;
+    -fx-background-color: rgba(255, 255, 255, 0.7);
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 3, 0, 0, 1);
+}
+
+
+
+
+

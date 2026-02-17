@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cyberheist.Tools.PishingMailController"
+      alignment="CENTER" spacing="20" styleClass="tool-detail-root">
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30" />
+    </padding>
+
+    <Label text="Phishing Mail" styleClass="title-label" />
+
+    <HBox spacing="20" alignment="CENTER">
+        <Label text="2000 Coins" styleClass="price-label" />
+    </HBox>
+
+    <ImageView fx:id="toolImage" fitHeight="300" fitWidth="300" />
+
+    <Label fx:id="toolDescription" text="Pishing Mail: A tool designed for cracking passwords by trying various combinations." styleClass="description-label"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="buyButton" text="Buy Tool" onAction="#handleBuyTool" styleClass="buy-button"/>
+    </HBox>
+
+    <Button fx:id="backButton" onAction="#handleBack" text="← BACK" />
+</VBox>

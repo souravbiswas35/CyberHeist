@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="477.0" prefWidth="442.0" styleClass="root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberheist.GameMenuController">
+
+    <!-- Top Bar -->
+    <top>
+        <HBox alignment="CENTER" spacing="50" styleClass="container">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+
+            <Label fx:id="coinsLabel" styleClass="coins-label" text="Coins: 500" />
+            <Label fx:id="diamondsLabel" styleClass="diamonds-label" text="Diamonds: 10" />
+            <Button fx:id="profileButton" onAction="#handleViewProfile" text="PROFILE" />
+        </HBox>
+    </top>
+
+    <!-- Center Content -->
+    <center>
+        <VBox alignment="CENTER" spacing="30">
+            <padding>
+                <Insets bottom="50" left="50" right="50" top="50" />
+            </padding>
+
+            <Label styleClass="title-label" text="HACKER COMMAND CENTER" />
+             <Button fx:id="attackButton" onAction="#handleAttack" prefHeight="26.0" prefWidth="164.0" styleClass="menu-button primary-button" text="ATTACK" />
+
+            <GridPane alignment="CENTER" hgap="30" prefHeight="86.0" prefWidth="345.0" vgap="30">
+                <Button fx:id="miniGamesButton" onAction="#handleMiniGames" prefHeight="18.0" prefWidth="76.0" styleClass="menu-button" text="MINI GAMES" GridPane.columnIndex="1" />
+                <Button fx:id="toolsButton" onAction="#handleTools" prefHeight="18.0" prefWidth="56.0" styleClass="menu-button" text="TOOLS" GridPane.columnIndex="2" />
+                <Button fx:id="upgradeButton" onAction="#handleUpgrade" prefHeight="18.0" prefWidth="70.0" styleClass="menu-button" text="UPGRADE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Button fx:id="aboutButton" onAction="#handleAbout" prefHeight="18.0" prefWidth="59.0" styleClass="menu-button" text="About" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <columnConstraints>
+               <ColumnConstraints />
+               <ColumnConstraints />
+               <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <Label styleClass="info-label" text="Select your hacking operation!!" />
+        </VBox>
+    </center>
+
+    <!-- Bottom Status -->
+    <bottom>
+        <Label styleClass="info-label" text="System Status: ONLINE | Security Level: MAXIMUM">
+            <padding>
+                <Insets bottom="10" left="20" right="20" top="10" />
+            </padding>
+        </Label>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cyberheist.WordGameController"
+      alignment="CENTER" spacing="20" styleClass="root">
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30" />
+    </padding>
+
+    <Label text="PASSWORD CRACKER" styleClass="title-label" />
+    <Label fx:id="scoreLabel" text="Score: 0" styleClass="coins-label" />
+
+
+
+    <VBox alignment="CENTER" spacing="15" styleClass="game-container">
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+
+        <Label fx:id="categoryLabel" text="Category: HACKING TERMS" styleClass="subtitle-label" />
+        <Label fx:id="wordLabel" text="_ _ _ _ _ _" styleClass="title-label" />
+        <Label fx:id="hintLabel" text="Hint: A method to gain unauthorized access" styleClass="info-label" />
+
+        <Label fx:id="statusLabel" text="" styleClass="info-label" />
+
+        <Label fx:id="attemptsLabel" text="Attempts: 3" styleClass="subtitle-label" />
+
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Wrong guesses:" styleClass="info-label" />
+            <Label fx:id="wrongGuessesLabel" text="0/6" styleClass="subtitle-label" />
+        </HBox>
+
+        <TextField fx:id="guessField" promptText="Enter a letter" maxWidth="200" />
+        <HBox spacing="10" alignment="CENTER">
+            <Button fx:id="guessButton" text="GUESS LETTER" onAction="#handleGuess" styleClass="primary-button" />
+            <Button fx:id="skipButton" text="SKIP WORD" onAction="#handleSkip" styleClass="primary-button" />
+            <Button fx:id="solveButton" text="SOLVE WORD" onAction="#handleSolve" styleClass="primary-button" />
+        </HBox>
+
+        <VBox spacing="5" alignment="CENTER">
+            <Label text="Used Letters:" styleClass="info-label" />
+            <Label fx:id="usedLettersLabel" text="" styleClass="subtitle-label" />
+        </VBox>
+    </VBox>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="backButton" text="← BACK" onAction="#handleBack" />
+        <Button fx:id="mainMenuButton" text="MAIN MENU" onAction="#handleMainMenu" styleClass="primary-button" />
+    </HBox>
+
+    <Label text="Crack the password to earn 100 coins!" styleClass="info-label" />
+</VBox>

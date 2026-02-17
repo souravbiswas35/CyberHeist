@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cyberheist.AttackController"
+      alignment="CENTER" spacing="30" styleClass="root">
+    <padding>
+        <Insets bottom="50" left="50" right="50" top="50" />
+    </padding>
+
+    <Label text="MULTIPLAYER ATTACK" styleClass="title-label" />
+    <Label text="Challenge another hacker to a cyber duel" styleClass="subtitle-label" />
+
+    <VBox spacing="30" alignment="CENTER">
+        <!-- IP Address Input Section -->
+        <VBox spacing="15" alignment="CENTER" styleClass="container">
+            <padding>
+                <Insets bottom="30" left="30" right="30" top="30" />
+            </padding>
+            <Label text="ENTER SERVER IP ADDRESS" styleClass="info-label" />
+            <TextField fx:id="roomCodeField" promptText="Enter IP address (e.g., 192.168.1.100)"
+                       maxWidth="300" alignment="CENTER" />
+            <Label text="Enter the IP address of the server machine" styleClass="info-label" />
+        </VBox>
+
+        <!-- Action Buttons Section -->
+        <VBox spacing="15" alignment="CENTER" styleClass="container">
+            <padding>
+                <Insets bottom="30" left="30" right="30" top="30" />
+            </padding>
+            <HBox spacing="20" alignment="CENTER">
+                <Button fx:id="createRoomButton" text="CREATE GAME" onAction="#handleCreateRoom"
+                        styleClass="primary-button" prefWidth="200" prefHeight="50" />
+                <Button fx:id="joinRoomButton" text="JOIN GAME" onAction="#handleJoinRoom"
+                        styleClass="primary-button" prefWidth="200" prefHeight="50" />
+            </HBox>
+            <Label text="Create a new game room or join an existing one" styleClass="info-label" />
+        </VBox>
+    </VBox>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="backButton" text="← BACK" onAction="#handleBack" />
+        <Button fx:id="mainMenuButton" text="MAIN MENU" onAction="#handleMainMenu" styleClass="primary-button" />
+    </HBox>
+
+    <Label text="Engage in cyber battles with other players" styleClass="info-label" />
+</VBox>

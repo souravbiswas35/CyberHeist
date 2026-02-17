@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cyberheist.SpaceGameController" styleClass="root">
+    <top>
+        <VBox spacing="10" styleClass="space-game-header">
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+            <HBox alignment="CENTER_LEFT" spacing="15" styleClass="space-game-nav">
+                <Button fx:id="backButton" onAction="#handleBackButton" styleClass="space-nav-button" text="◀ Back" />
+                <Button fx:id="menuButton" onAction="#handleMenuButton" styleClass="space-nav-button" text="☰ Menu" />
+
+                <Region HBox.hgrow="ALWAYS" />
+
+                <Button fx:id="pauseButton" onAction="#handlePauseButton" styleClass="space-nav-button-accent" text="⏸ Pause" />
+            </HBox>
+
+            <Separator styleClass="space-separator" />
+
+            <VBox alignment="CENTER" spacing="10">
+                <Label styleClass="space-game-title" text="🚀 SPACE DEFENDER 🛸" />
+                <HBox alignment="CENTER" spacing="50">
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label styleClass="space-stat-label" text="SCORE" />
+                        <Label fx:id="scoreLabel" styleClass="space-game-stat" text="0" />
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label styleClass="space-stat-label" text="LIVES" />
+                        <Label fx:id="livesLabel" styleClass="space-game-stat" text="3" />
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label styleClass="space-stat-label" text="LEVEL" />
+                        <Label fx:id="levelLabel" styleClass="space-game-stat" text="1" />
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="2">
+                        <Label styleClass="space-stat-label" text="TIME" />
+                        <Label fx:id="timeLabel" styleClass="space-game-stat" text="00:00" />
+                    </VBox>
+                </HBox>
+            </VBox>
+        </VBox>
+    </top>
+
+    <center>
+        <StackPane>
+            <Canvas fx:id="gameCanvas" height="600.0" width="800.0"
+                    onKeyPressed="#handleKeyPressed"
+                    onKeyReleased="#handleKeyReleased"
+                    styleClass="space-game-canvas" />
+
+            <!-- Pause Overlay -->
+            <VBox fx:id="pauseOverlay" alignment="CENTER" spacing="20" styleClass="space-pause-overlay" visible="false">
+                <Label styleClass="space-pause-title" text="⏸ GAME PAUSED" />
+                <VBox alignment="CENTER" spacing="15">
+                    <Button onAction="#handleResumeButton" styleClass="space-menu-button" text="▶ Resume Game" />
+                    <Button onAction="#restartGame" styleClass="space-menu-button" text="🔄 Restart Game" />
+                    <Button onAction="#handleMenuButton" styleClass="space-menu-button" text="☰ Main Menu" />
+                    <Button onAction="#handleBackButton" styleClass="space-menu-button-secondary" text="◀ Back" />
+                </VBox>
+                <Label styleClass="space-pause-hint" text="Press ESC or P to resume" />
+            </VBox>
+
+            <!-- Game Over Overlay -->
+            <VBox fx:id="gameOverOverlay" alignment="CENTER" spacing="20" styleClass="space-gameover-overlay" visible="false">
+                <Label styleClass="space-gameover-title" text="💥 GAME OVER!" />
+                <Label fx:id="gameOverLabel" styleClass="space-gameover-score" text="Final Score: 0" />
+                <VBox alignment="CENTER" spacing="15">
+                    <Button onAction="#restartGame" styleClass="space-menu-button" text="🔄 Play Again" />
+                    <Button onAction="#handleMenuButton" styleClass="space-menu-button" text="☰ Main Menu" />
+                    <Button onAction="#handleBackButton" styleClass="space-menu-button-secondary" text="◀ Back" />
+                </VBox>
+                <Label styleClass="space-gameover-hint" text="Press R to restart" />
+            </VBox>
+
+            <!-- Menu Overlay -->
+            <VBox fx:id="menuOverlay" alignment="CENTER" spacing="25" styleClass="space-menu-overlay" visible="false">
+                <Label styleClass="space-menu-title" text="🎮 GAME MENU" />
+                <VBox alignment="CENTER" spacing="15">
+                    <Button fx:id="resumeMenuButton" onAction="#handleResumeButton" styleClass="space-menu-button" text="▶ Resume Game" />
+                    <Button onAction="#restartGame" styleClass="space-menu-button" text="🔄 New Game" />
+                    <Separator styleClass="space-menu-separator" />
+                    <Button onAction="#handleSettingsButton" styleClass="space-menu-button" text="⚙ Settings" />
+                    <Button onAction="#handleHighScoresButton" styleClass="space-menu-button" text="🏆 High Scores" />
+                    <Button onAction="#handleHelpButton" styleClass="space-menu-button" text="❓ Help" />
+                    <Separator styleClass="space-menu-separator" />
+                    <Button onAction="#handleMeenuButton" styleClass="space-menu-button-secondary" text="◀ Exit to Main" />
+                </VBox>
+            </VBox>
+
+            <!-- Loading Overlay -->
+            <VBox fx:id="loadingOverlay" alignment="CENTER" spacing="15" styleClass="space-loading-overlay" visible="false">
+                <Label styleClass="space-loading-title" text="🚀 INITIALIZING..." />
+                <Label styleClass="space-loading-text" text="Preparing space defense systems..." />
+            </VBox>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <VBox alignment="CENTER" spacing="15" styleClass="space-game-controls">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="15.0" />
+            </padding>
+
+            <HBox alignment="CENTER" spacing="20">
+                <Button onAction="#restartGame" styleClass="space-action-button" text="🔄 Restart" />
+                <Button fx:id="quickPauseButton" onAction="#handlePauseButton" styleClass="space-action-button" text="⏸ Pause" />
+                <Button onAction="#handleMuteButton" styleClass="space-action-button" text="🔊 Sound" />
+                <Button onAction="#handleFullscreenButton" styleClass="space-action-button" text="⛶ Fullscreen" />
+            </HBox>
+
+            <Separator styleClass="space-separator" />
+
+            <VBox alignment="CENTER" spacing="8">
+                <Label styleClass="space-controls-title" text="🎮 CONTROLS" />
+                <HBox alignment="CENTER" spacing="30">
+                    <VBox alignment="CENTER" spacing="3">
+                        <Label styleClass="space-controls-category" text="MOVEMENT" />
+                        <Label styleClass="space-controls-text" text="WASD / Arrow Keys" />
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="3">
+                        <Label styleClass="space-controls-category" text="COMBAT" />
+                        <Label styleClass="space-controls-text" text="SPACE - Shoot" />
+                    </VBox>
+                    <VBox alignment="CENTER" spacing="3">
+                        <Label styleClass="space-controls-category" text="GAME" />
+                        <Label styleClass="space-controls-text" text="P/ESC - Pause • R - Restart" />
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <HBox alignment="CENTER" spacing="20" styleClass="space-status-bar">
+                <Label fx:id="fpsLabel" styleClass="space-status-text" text="FPS: 60" />
+                <Separator orientation="VERTICAL" styleClass="space-status-separator" />
+                <Label fx:id="enemiesLabel" styleClass="space-status-text" text="Enemies: 0" />
+                <Separator orientation="VERTICAL" styleClass="space-status-separator" />
+                <Label fx:id="difficultyLabel" styleClass="space-status-text" text="Difficulty: Normal" />
+                <Separator orientation="VERTICAL" styleClass="space-status-separator" />
+                <Label fx:id="statusLabel" styleClass="space-status-text" text="Status: Ready" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

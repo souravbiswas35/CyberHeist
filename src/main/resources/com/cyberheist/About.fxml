@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.cyberheist.AboutController"
+      alignment="CENTER" spacing="20" styleClass="about-root">
+    <padding>
+        <Insets bottom="30" left="30" right="30" top="30" />
+    </padding>
+
+    <Label text="About Cyber Heist" styleClass="title-label" />
+
+    <Label text="Game Description" styleClass="subtitle-label" />
+    <TextArea fx:id="gameDescription" editable="false" wrapText="true" prefHeight="200" prefWidth="400" style="-fx-control-inner-background: #f0f0f0;" styleClass="description-text" />
+
+    <Label text="Authors" styleClass="subtitle-label" />
+    <TextArea fx:id="authorsDescription" editable="false" wrapText="true" prefHeight="150" prefWidth="400" style="-fx-control-inner-background: #e0e0e0;" styleClass="authors-text" />
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="backButton" text="← BACK" onAction="#handleBack" styleClass="back-button"/>
+    </HBox>
+</VBox>
