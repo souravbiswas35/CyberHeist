@@ -1,76 +1,178 @@
-# CyberHeist Multiplayer Game
+<div align="center">
 
-## Overview
-CyberHeist is a multiplayer cyber battle game where two players can connect and engage in hacking battles. Players can use various attack and defense tools to reduce their opponent's health and protect their own base.
+# 🎮 CyberHeist
 
-## How to Play Multiplayer
+**CyberHeist is an educational game that teaches cybersecurity concepts and terminology through interactive gameplay.**
 
-### Setup (Two Players on Different Computers)
-1. **Player 1 (Host):**
-   - Run the server first: Execute `StartServer.bat` (Windows) or `StartServer.sh` (Linux/Mac)
-   - The server will display its IP address in the console window
-   - Launch the game by running CyberHeistMain
-   - Go to the "Attack" section from the main menu
-   - Enter the server's IP address (shown in the server console)
-   - Click "CREATE GAME"
-   - Note the 4-digit room code that appears
+---
 
-2. **Player 2 (Client):**
-   - Launch the game by running CyberHeistMain
-   - Go to the "Attack" section from the main menu
-   - Enter the server's IP address (same as Player 1 entered)
-   - Click "JOIN GAME"
-   - Enter the 4-digit room code provided by Player 1
+</div>
 
-3. **Both Players:**
-   - Once connected, click the "READY" button to start the game
-   - When both players are ready, the game will begin automatically
+## 🎮 Project Overview
 
-### Gameplay
-- Each player has a base with 100% health
-- Players have limited Attack XP (20) and Defense XP (15)
-- Choose your attack or defense type from the dropdown menus
-- Click "LAUNCH ATTACK" to attack your opponent's base
-- Click "ACTIVATE DEFENSE" to protect your base
-- Each action consumes 1 XP point from the respective category
-- The game continues until one player's base health reaches 0%
-- The winner receives 30 Diamonds as a reward
+**CyberHeist** is a **JavaFX cyber-battle game** with:
 
-### Attack Tools
-- Brute Force: Medium damage (3000 coins)
-- Phishing Mail: Low damage (2000 coins)
-- DDos: High damage (5000 coins)
-- KeySniffer: Low damage (1500 coins)
-- Injector: High damage (4000 coins)
-- Code Virus: Very high damage (8000 coins)
+- 🎨 **Cyberpunk UI** (neon/glow theme via `styles.css`)  
+- 👤 **User accounts** backed by MySQL  
+- 💰 **Coin/diamond economy** for tools and upgrades  
+- 🎯 **Multiple mini-games** (Snake, Tetris, Tic-Tac-Toe, Bubble Shooter, Space Game, Word Game)  
+- ⚔️ **Multiplayer Attack Mode** with socket-based server-client communication  
+- 🛠️ **Tool purchasing and upgrade system**  
+- 📊 **Player profile & stats tracking**
 
-### Defense Tools
-- FireWall Pro: Strong defense (3000 coins)
-- Encryption Vault: Medium defense (2500 coins)
-- EDS: Medium defense (2000 coins)
-- Antivirus: Very strong defense (7000 coins)
-- Patch Manager: Basic defense (1500 coins)
+Players log in or sign up, then navigate the **Hacker Command Center** to:
 
-## Building and Running from Source
+- 🚀 Launch multiplayer battles  
+- 🎮 Play training mini-games to earn coins/diamonds  
+- 🛒 Browse and upgrade hacking tools  
+- 📈 View detailed stats and game history
 
-### Prerequisites
-- Java JDK 11 or higher
-- Maven
+---
 
-### Build Instructions
-1. Clone the repository
-2. Navigate to the project directory
-3. Run `mvn clean package`
-4. The compiled files will be in the `target` directory
+## 🖥️ Features
 
-### Running
-1. Start the server: `java -cp target/classes com.cyberheist.server.CyberHeistServer`
-2. In a new terminal, run the client: `java -cp target/classes com.cyberheist.CyberHeistMain`
+### ⚔️ Multiplayer Battle
 
-## Game Controls
-- Select attack/defense types using the dropdown menus
-- Click the respective buttons to perform actions
-- The game message area shows the history of actions and their results
-- Click "QUIT GAME" to exit the match and return to the main menu
+- 🌐 **Server port:** 8888 (start server via `StartServer.bat` / `StartServer.sh`)  
+- 🔢 **Room system:** 4-digit room codes to join  
+- ❤️ **Base health, attack/defense XP, timers**  
+- 🎯 **Tool selection and battle animations**  
+- 🤖 **AI-supported mode, rematches, and rewards**  
 
-Enjoy the cyber battles! 
+### 🎮 Mini-Games
+
+- 🐍 **Snake:** Grid-based, score-to-coins conversion  
+- 🧱 **Tetris:** Piece rotation, line clears, levels, score-to-coins  
+- ❌ **Tic-Tac-Toe:** Minimax AI opponent  
+- 🎯 **Bubble Shooter:** Match-3 mechanics, coins for progress  
+- 🚀 **Space Game:** Arcade shooter, FPS tracking, coins  
+- 📝 **Word Game:** "Password Cracker," letter-guessing with hints  
+
+### 💾 Database & Economy
+
+All game progression is stored in MySQL (`game.sql`):
+
+- 👥 **users:** Login credentials, coins, diamonds, level, XP, stats, profile picture  
+- 🛠️ **tools:** Attack/defense catalog, base costs, descriptions  
+- 📦 **user_tools:** Tool ownership & upgrade levels  
+- 📜 **game_history:** Game results, timestamps, durations  
+
+### 🎨 UI
+
+- 🖼️ **FXML screens** for login, signup, menu, attack/join, battle, tools, upgrades, profile, and mini-games  
+- 🌈 **Cyberpunk neon/glow styling** via `styles.css`  
+- 🎬 **Visual assets:** backgrounds, tool images, animations
+
+---
+
+## ⚙️ Project Structure
+
+```
+CyberHeist/
+├─ 📁 src/main/java/com/cyberheist/
+│  ├─ 🎮 Controllers (All game & tool controllers)
+│  ├─ 🌐 network/ (GameClient.java)
+│  ├─ 🖥️ server/ (CyberHeistServer.java)
+│  └─ 🚀 CyberHeistMain.java
+├─ 📁 src/main/resources/com/cyberheist/
+│  ├─ 📄 FXML/ (UI screens)
+│  ├─ 🛠️ Tool/ (Tool screens)
+│  ├─ 🎨 assets/ (images, gifs)
+│  └─ 💅 styles.css
+├─ 🗄️ game.sql (Database schema & initial data)
+├─ 🖥️ StartServer.bat / StartServer.sh
+├─ 📦 pom.xml (Maven config)
+└─ 🚫 .gitignore
+```
+
+---
+
+## 🛠️ Dependencies
+
+- ☕ **Java 21**  
+- 🖼️ **JavaFX 23**  
+- 📦 **Maven project**  
+- 🗄️ **MySQL Connector JAR:** `mysql-connector-j-8.0.33.jar` (add to `pom.xml` or project library)  
+
+**Maven dependency for MySQL Connector:**
+
+```xml
+<dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.33</version>
+</dependency>
+```
+
+---
+
+## 🗄️ Database Setup
+
+1. **Install MySQL or XAMPP**
+
+2. **Create a new database:**
+
+```sql
+CREATE DATABASE cyberheist;
+```
+
+3. **Import `game.sql`:**
+
+```bash
+mysql -u root -p cyberheist < game.sql
+```
+
+4. **Update database connection in `DatabaseConnection.java`:**
+
+```java
+private static final String URL = "jdbc:mysql://localhost:3306/cyberheist";
+private static final String USER = "root";
+private static final String PASSWORD = "";
+```
+
+5. **Make sure `mysql-connector-java-8.0.33.jar` is in your project libraries**
+
+---
+
+## 🚀 How to Run
+
+1. **Clone the repo:**
+
+```bash
+git clone https://github.com/souravbiswas35/CyberHeist.git
+cd CyberHeist
+```
+
+2. **Build with Maven:**
+
+```bash
+mvn clean install
+```
+
+3. **Start server** (for multiplayer mode):
+
+   - **Windows:** `StartServer.bat`
+   - **Linux/macOS:** `StartServer.sh`
+
+4. **Run the JavaFX application** (`CyberHeistMain.java`)
+
+5. **Play and learn** cybersecurity concepts interactively! 🎉
+
+---
+
+## 🎯 Learn & Play
+
+**CyberHeist teaches:**
+
+- 🛡️ **Cybersecurity tools:** Antivirus, Brute Force, DDoS, Encryption, Firewalls, etc.
+- ⚠️ **Cybersecurity terms:** Phishing, Injection, Keylogging, Patch Management, IDS
+- 🧠 **Strategy & logic skills:** Mini-games and attack/defense battles
+- 💾 **Database handling & in-game economy**
+
+---
+
+## 📌 Notes
+
+- ⚠️ **Multiplayer requires** both host and client to use the same server IP
+- 📊 **Mini-game scores** are automatically logged in `game_history`
+- 🔴 **Always ensure MySQL server is running** before launching the app
