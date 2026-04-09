@@ -1,87 +1,128 @@
 <div align="center">
 
-# 🎮 CyberHeist
+![CyberHeist Typing SVG](https://readme-typing-svg.demolab.com?font=Orbitron&weight=900&size=42&duration=3000&pause=1000&color=00FFFF&center=true&vCenter=true&width=600&lines=🎮+CYBERHEIST;HACK+THE+SYSTEM;LEARN+%26+DOMINATE)
+<br/>
 
-**CyberHeist is an educational game that teaches cybersecurity concepts and terminology through interactive gameplay.**
+![CyberHeist Banner](https://capsule-render.vercel.app/api?type=waving&color=0:0d0d0d,50:0a1628,100:00ffff&height=200&section=header&text=CyberHeist&fontSize=72&fontColor=00ffff&fontAlignY=38&desc=Hack.+Learn.+Dominate.&descAlignY=60&descColor=ff00ff&animation=fadeIn)
+
+<br/>
+
+[![Java](https://img.shields.io/badge/Java-21-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com)
+[![JavaFX](https://img.shields.io/badge/JavaFX-23-0096C7?style=for-the-badge&logo=java&logoColor=white)](https://openjfx.io)
+[![Maven](https://img.shields.io/badge/Maven-Build-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white)](https://maven.apache.org)
+[![MySQL](https://img.shields.io/badge/MySQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com)
+[![License](https://img.shields.io/badge/License-MIT-00FF41?style=for-the-badge)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/souravbiswas35/CyberHeist?style=for-the-badge&color=FFD700&logo=github)](https://github.com/souravbiswas35/CyberHeist/stargazers)
+
+<br/>
+
+> **`// An educational cybersecurity game where you learn by hacking //`**
 
 ---
 
 </div>
 
-## 🎮 Project Overview
+## 🌐 Project Overview
 
-**CyberHeist** is a **JavaFX cyber-battle game** with:
+**CyberHeist** is a **JavaFX cyber-battle game** built with a full cyberpunk aesthetic, letting players fight, learn, and level up in a neon-drenched hacker universe.
 
-- 🎨 **Cyberpunk UI** (neon/glow theme via `styles.css`)  
-- 👤 **User accounts** backed by MySQL  
-- 💰 **Coin/diamond economy** for tools and upgrades  
-- 🎯 **Multiple mini-games** (Snake, Tetris, Tic-Tac-Toe, Bubble Shooter, Space Game, Word Game)  
-- ⚔️ **Multiplayer Attack Mode** with socket-based server-client communication  
-- 🛠️ **Tool purchasing and upgrade system**  
-- 📊 **Player profile & stats tracking**
+```
+╔══════════════════════════════════════════════════════════╗
+║  🎨  Cyberpunk UI     →  neon/glow theme via styles.css  ║
+║  👤  User Accounts    →  backed by MySQL                 ║
+║  💰  Economy          →  coins & diamonds system         ║
+║  🎯  Mini-Games       →  6 unique training modules       ║
+║  ⚔️  Multiplayer      →  socket-based real-time battles  ║
+║  🛠️  Tools & Upgrades →  strategic hacking arsenal       ║
+║  📊  Player Profiles  →  full stats & history tracking   ║
+╚══════════════════════════════════════════════════════════╝
+```
 
-Players log in or sign up, then navigate the **Hacker Command Center** to:
+Players **log in or sign up**, then navigate the **Hacker Command Center** to:
 
-- 🚀 Launch multiplayer battles  
-- 🎮 Play training mini-games to earn coins/diamonds  
-- 🛒 Browse and upgrade hacking tools  
-- 📈 View detailed stats and game history
+- 🚀 Launch multiplayer battles against real opponents
+- 🎮 Play training mini-games to earn coins & diamonds
+- 🛒 Browse, buy, and upgrade hacking tools
+- 📈 View detailed stats and battle history
 
 ---
 
-## 🖥️ Features
+## ⚡ Features
+
+<table>
+<tr>
+<td width="50%">
 
 ### ⚔️ Multiplayer Battle
+```
+🌐 Server Port  → 8888
+🔢 Room Codes   → 4-digit join system
+❤️ Base Health  → attack/defense XP
+🎯 Tool Select  → animated battles
+🤖 AI Mode      → rematch & rewards
+```
+Start server via `StartServer.bat` / `StartServer.sh`
 
-- 🌐 **Server port:** 8888 (start server via `StartServer.bat` / `StartServer.sh`)  
-- 🔢 **Room system:** 4-digit room codes to join  
-- ❤️ **Base health, attack/defense XP, timers**  
-- 🎯 **Tool selection and battle animations**  
-- 🤖 **AI-supported mode, rematches, and rewards**  
-
-### 🎮 Mini-Games
-
-- 🐍 **Snake:** Grid-based, score-to-coins conversion  
-- 🧱 **Tetris:** Piece rotation, line clears, levels, score-to-coins  
-- ❌ **Tic-Tac-Toe:** Minimax AI opponent  
-- 🎯 **Bubble Shooter:** Match-3 mechanics, coins for progress  
-- 🚀 **Space Game:** Arcade shooter, FPS tracking, coins  
-- 📝 **Word Game:** "Password Cracker," letter-guessing with hints  
+</td>
+<td width="50%">
 
 ### 💾 Database & Economy
+```
+👥 users        → credentials, coins, XP, stats
+🛠️ tools        → attack/defense catalog
+📦 user_tools   → ownership & upgrade levels
+📜 game_history → results, timestamps, durations
+```
+All progression stored in **MySQL** via `game.sql`
 
-All game progression is stored in MySQL (`game.sql`):
-
-- 👥 **users:** Login credentials, coins, diamonds, level, XP, stats, profile picture  
-- 🛠️ **tools:** Attack/defense catalog, base costs, descriptions  
-- 📦 **user_tools:** Tool ownership & upgrade levels  
-- 📜 **game_history:** Game results, timestamps, durations  
-
-### 🎨 UI
-
-- 🖼️ **FXML screens** for login, signup, menu, attack/join, battle, tools, upgrades, profile, and mini-games  
-- 🌈 **Cyberpunk neon/glow styling** via `styles.css`  
-- 🎬 **Visual assets:** backgrounds, tool images, animations
+</td>
+</tr>
+</table>
 
 ---
 
-## ⚙️ Project Structure
+### 🎮 Mini-Games Arsenal
+
+| Game | Description | Reward |
+|------|-------------|--------|
+| 🐍 **Snake** | Grid-based classic, score-to-coins | 💰 Coins |
+| 🧱 **Tetris** | Piece rotation, line clears, leveling | 💰 Coins |
+| ❌ **Tic-Tac-Toe** | Minimax AI opponent | 💰 Coins |
+| 🎯 **Bubble Shooter** | Match-3 mechanics | 💰 Coins |
+| 🚀 **Space Game** | Arcade shooter with FPS tracking | 💰 Coins |
+| 📝 **Word Game** | "Password Cracker" letter-guessing | 💰 Coins |
+
+---
+
+### 🎨 UI & Design
+
+- 🖼️ **FXML Screens** — login, signup, menu, battle, tools, upgrades, profile & mini-games
+- 🌈 **Cyberpunk Neon Glow** — full theme via `styles.css`
+- 🎬 **Visual Assets** — backgrounds, tool images, custom animations
+
+---
+
+## 📁 Project Structure
 
 ```
 CyberHeist/
+│
 ├─ 📁 src/main/java/com/cyberheist/
-│  ├─ 🎮 Controllers (All game & tool controllers)
-│  ├─ 🌐 network/ (GameClient.java)
-│  ├─ 🖥️ server/ (CyberHeistServer.java)
-│  └─ 🚀 CyberHeistMain.java
+│  ├─ 🎮 Controllers/          # All game & tool controllers
+│  ├─ 🌐 network/              # GameClient.java
+│  ├─ 🖥️ server/               # CyberHeistServer.java
+│  └─ 🚀 CyberHeistMain.java   # Entry point
+│
 ├─ 📁 src/main/resources/com/cyberheist/
-│  ├─ 📄 FXML/ (UI screens)
-│  ├─ 🛠️ Tool/ (Tool screens)
-│  ├─ 🎨 assets/ (images, gifs)
-│  └─ 💅 styles.css
-├─ 🗄️ game.sql (Database schema & initial data)
-├─ 🖥️ StartServer.bat / StartServer.sh
-├─ 📦 pom.xml (Maven config)
+│  ├─ 📄 FXML/                 # UI screens
+│  ├─ 🛠️ Tool/                 # Tool screens
+│  ├─ 🎨 assets/               # images, gifs
+│  └─ 💅 styles.css            # Global cyberpunk theme
+│
+├─ 🗄️ game.sql                 # Database schema & seed data
+├─ 🖥️ StartServer.bat          # Windows server launcher
+├─ 🐧 StartServer.sh           # Linux/macOS server launcher
+├─ 📦 pom.xml                  # Maven configuration
 └─ 🚫 .gitignore
 ```
 
@@ -89,13 +130,14 @@ CyberHeist/
 
 ## 🛠️ Dependencies
 
-- ☕ **Java 21**  
-- 🖼️ **JavaFX 23**  
-- 📦 **Maven project**  
-- 🗄️ **MySQL Connector JAR:** `mysql-connector-j-8.0.33.jar` (add to `pom.xml` or project library)  
+| Dependency | Version | Purpose |
+|------------|---------|---------|
+| ☕ Java | `21` | Core runtime |
+| 🖼️ JavaFX | `23` | UI framework |
+| 📦 Maven | latest | Build & dependency management |
+| 🗄️ MySQL Connector | `8.0.33` | Database connectivity |
 
-**Maven dependency for MySQL Connector:**
-
+**Maven dependency for MySQL:**
 ```xml
 <dependency>
     <groupId>mysql</groupId>
@@ -108,71 +150,94 @@ CyberHeist/
 
 ## 🗄️ Database Setup
 
-1. **Install MySQL or XAMPP**
+**Step 1** — Install MySQL or XAMPP
 
-2. **Create a new database:**
-
+**Step 2** — Create the database:
 ```sql
 CREATE DATABASE cyberheist;
 ```
 
-3. **Import `game.sql`:**
-
+**Step 3** — Import schema:
 ```bash
 mysql -u root -p cyberheist < game.sql
 ```
 
-4. **Update database connection in `DatabaseConnection.java`:**
-
+**Step 4** — Update `DatabaseConnection.java`:
 ```java
-private static final String URL = "jdbc:mysql://localhost:3306/cyberheist";
-private static final String USER = "root";
+private static final String URL      = "jdbc:mysql://localhost:3306/cyberheist";
+private static final String USER     = "root";
 private static final String PASSWORD = "";
 ```
 
-5. **Make sure `mysql-connector-java-8.0.33.jar` is in your project libraries**
+**Step 5** — Add `mysql-connector-java-8.0.33.jar` to project libraries ✅
 
 ---
 
 ## 🚀 How to Run
 
-1. **Clone the repo:**
-
 ```bash
+# 1. Clone the repository
 git clone https://github.com/souravbiswas35/CyberHeist.git
 cd CyberHeist
-```
 
-2. **Build with Maven:**
-
-```bash
+# 2. Build with Maven
 mvn clean install
+
+# 3. Start multiplayer server
+./StartServer.sh          # Linux/macOS
+StartServer.bat           # Windows
+
+# 4. Run the application
+# Launch CyberHeistMain.java from your IDE or via Maven JavaFX plugin
 ```
 
-3. **Start server** (for multiplayer mode):
+---
 
-   - **Windows:** `StartServer.bat`
-   - **Linux/macOS:** `StartServer.sh`
+## 🧠 What You'll Learn
 
-4. **Run the JavaFX application** (`CyberHeistMain.java`)
-
-5. **Play and learn** cybersecurity concepts interactively! 🎉
+```
+🛡️  Cybersecurity Tools   →  Antivirus, Brute Force, DDoS, Encryption, Firewalls
+⚠️  Cybersecurity Terms   →  Phishing, Injection, Keylogging, Patch Mgmt, IDS
+🧩  Strategy & Logic      →  Mini-games + attack/defense battle mechanics
+💾  Database Handling     →  In-game economy & progression systems
+```
 
 ---
 
-## 🎯 Learn & Play
+## 📌 Important Notes
 
-**CyberHeist teaches:**
+> ⚠️ **Multiplayer** requires both host and client to connect to the **same server IP**
 
-- 🛡️ **Cybersecurity tools:** Antivirus, Brute Force, DDoS, Encryption, Firewalls, etc.
-- ⚠️ **Cybersecurity terms:** Phishing, Injection, Keylogging, Patch Management, IDS
-- 🧠 **Strategy & logic skills:** Mini-games and attack/defense battles
-- 💾 **Database handling & in-game economy**
+> 📊 **Mini-game scores** are automatically logged to `game_history`
+
+> 🔴 **Always ensure MySQL** is running before launching the app
 
 ---
 
-## 📌 Notes
+## 👥 Team
 
-- ⚠️ **Multiplayer requires** both host and client to use the same server IP
-- 📊 **Mini-game scores** are automatically logged in `game_history`
-- 🔴 **Always ensure MySQL server is running** before launching the app
+> *This project was built as part of an initiative to gamify cybersecurity education — making complex concepts approachable through interactive gameplay.*
+
+<div align="center">
+
+| 👨‍💻 Name | 🔗 GitHub Profile |
+|-----------|-------------------|
+| **Sourav Biswas** | [![GitHub](https://img.shields.io/badge/GitHub-%40souravbiswas35-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117&color=00ffff)](https://github.com/souravbiswas35) |
+| **Saidul Islam Shuvo** | [![GitHub](https://img.shields.io/badge/GitHub-%40shuivva-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117&color=ff00ff)](https://github.com/shuivva) |
+| **Sakibul Alam** | [![GitHub](https://img.shields.io/badge/GitHub-%40SakibulAlam001-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117&color=00ff41)](https://github.com/SakibulAlam001) |
+
+</div>
+
+---
+
+<div align="center">
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:00ffff,50:0a1628,100:0d0d0d&height=120&section=footer&animation=fadeIn)
+
+**⭐ Star this repo if CyberHeist helped you learn something new!**
+
+[![GitHub Repo](https://img.shields.io/badge/🔗%20View%20on%20GitHub-CyberHeist-00ffff?style=for-the-badge&logo=github&logoColor=black)](https://github.com/souravbiswas35/CyberHeist)
+
+*Made with 💻 + ☕ + 🌙 by the CyberHeist Team*
+
+</div>
